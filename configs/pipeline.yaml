@@ -1,0 +1,35 @@
+# configs/pipeline.yaml
+pipeline:
+  name: "route_resilience"
+  version: "1.0.0"
+
+segmentation:
+  model: "swin_unet"
+  input_size: [512, 512]
+  patch_size: 4
+  embed_dim: 96
+  depths: [2, 2, 6, 2]
+  num_heads: [3, 6, 12, 24]
+  window_size: 7
+  num_classes: 2
+  dropout: 0.1
+  checkpoint: null
+
+graph:
+  skeleton_method: "skeletonize_3d"
+  min_branch_length: 15
+  max_gap_fill: 50
+  snap_tolerance: 10
+  mst_weight: "euclidean"
+
+analysis:
+  centrality_weight: "length"
+  top_k_critical: 20
+  ablation_k: 10
+  simulation_iterations: 100
+
+dashboard:
+  host: "0.0.0.0"
+  port: 8501
+  map_center: [40.7128, -74.0060]
+  map_zoom: 13

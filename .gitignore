@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.Python
+*.egg-info/
+.venv/
+venv/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Project outputs (regenerated at runtime, don't commit)
+outputs/*
+!outputs/.gitkeep
+data/raw/*
+data/processed/*
+data/tiled/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/tiled/.gitkeep
+models/*.pt
+models/*.pth
+models/*.ckpt
+!models/.gitkeep
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
